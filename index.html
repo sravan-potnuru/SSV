@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRI SAI VENKATESWARA AGENCIES - Dream Your Home</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+            background-color: #ddd;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #ddd;
+        }
+        
+        .product-details {
+            padding: 20px;
+        }
+        
+        .product-details h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .product-details p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Hours Section */
+        .hours {
+            padding: 80px 0;
+        }
+        
+        .hours-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .hours-table th, .hours-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .hours-table th {
+            color: var(--dark-color);
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .partners-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .partner-logo {
+            height: 100px;
+            width: 150px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+        }
+        
+        .reviews-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .review-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review-stars {
+            color: gold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .review-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .reviewer {
+            display: flex;
+            align-items: center;
+        }
+        
+        .reviewer-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+        }
+        
+        .reviewer-name {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+            margin-top: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">SRI SAI VENKATESWARA AGENCIES<span></span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#hours">Hours</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to SSV AGENCIES</h1>
+            <p>"Your trusted partner for quality paints, inverters, coolers, PVC products, and complete hardware solutions. We proudly serve both wholesale and retail customers with competitive pricing and expert advice since 2017. We offer a wide range of high-quality products from industry-leading brands.</p>
+            <a href="#products" class="btn">Explore Our Products</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src= "LOGO.jpg" alt="Store front of SSV Agencies">
+                </div>
+                <div class="about-text">
+                    <h3>Your Trusted Electronics Partner</h3>
+                    <p>Founded in 2017, Apex Electronics has grown to become a leader in consumer electronics retail. Our mission is to provide customers with the best tech products and exceptional service.</p>
+                    <p>What sets us apart is our commitment to quality, expert knowledge, and customer satisfaction. Our team consists of tech enthusiasts who are passionate about helping you find the perfect solution for your needs.</p>
+                    <p>We pride ourselves on offering competitive prices without compromising on quality. All our products come with manufacturer warranty and our additional service guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Paints">
+                    </div>
+                    <div class="product-details">
+                        <h3>asianpaints</h3>
+                        <p> Dream Your Home.</p>
+                        <div class="product-price">Starting at 200</div>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="inverters">
+                    </div>
+                    <div class="product-details">
+                        <h3>inverters</h3>
+                        <p>Power up your life with the reliability of an inverter.</p>
+                        <div class="product-price">Starting at 899</div>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Smart TV">
+                    </div>
+                    <div class="product-details">
+                        <h3>Coolers</h3>
+                        <p>Keeping Your Family Cool Is a Breeze.</p>
+                        <div class="product-price">Starting at 699</div>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Audio Systems">
+                    </div>
+                    <div class="product-details">
+                        <h3>PVC</h3>
+                        <p>Clogged no more, just free-flow vibes here</p>
+                        <div class="product-price">Starting at 299</div>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Gaming Consoles">
+                    </div>
+                    <div class="product-details">
+                        <h3>Hardware</h3>
+                        <p>Latest gaming systems and accessories for the ultimate experience.</p>
+                        <div class="product-price">Starting at 399</div>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/200" alt="Smart Home Devices">
+                    </div>
+                    <div class="product-details">
+                        <h3>Smart Home</h3>
+                        <p>Connected devices to automate and enhance your home environment.</p>
+                        <div class="product-price">Starting at $79</div>
+                        <a href="#contact" class="btn">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Hours Section -->
+    <section class="hours" id="hours">
+        <div class="container">
+            <h2 class="section-title">Store Hours</h2>
+            <div class="hours-container">
+                <table class="hours-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>9:00 AM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>9:00 AM - 9:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>10:00 AM - 9:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>11:00 AM - 6:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px; text-align: center;">Special holiday hours may apply. Please check our social media for announcements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="section-title">Our Brand Partners</h2>
+            <div class="partners-logos">
+                <div class="partner-logo">Birla Opus</div>
+                <div class="partner-logo">asianpaints</div>
+                <div class="partner-logo">technopaints</div>
+                <div class="partner-logo">Aditya Birla group</div>
+                <div class="partner-logo">godrej</div>
+                <div class="partner-logo">L&T</div>
+                <div class="partner-logo">Crompton</div>
+                <div class="partner-logo">Vihan</div>
+                <div class="partner-logo">Goldmed</div>
+                <div class="partner-logo">Parryware</div>
+                <div class="partner-logo">Sudhakar pipes and fittings</div>
+                <div class="partner-logo">ashirvad pipes</div>
+                <div class="partner-logo">Astral pipes</div>
+                <div class="partner-logo">Pidilite</div>
+                <div class="partner-logo">Exide</div>
+                <div class="partner-logo">Amaron</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-container">
+                <div class="review-cards">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">"Outstanding service and knowledgeable staff! They helped me find the perfect laptop for my design work within my budget. Highly recommend!"</div>
+                        <div class="reviewer">
+                            <div class="reviewer-image"></div>
+                            <div>
+                                <div class="reviewer-name">Sarah Johnson</div>
+                                <div class="reviewer-date">March 15, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">"I've been shopping at Apex Electronics for years and have always had a great experience. They have competitive prices and always stand behind their products."</div>
+                        <div class="reviewer">
+                            <div class="reviewer-image"></div>
+                            <div>
+                                <div class="reviewer-name">Michael Chen</div>
+                                <div class="reviewer-date">February 22, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★☆</div>
+                        <div class="review-text">"Great selection of products and friendly staff. The only reason I'm not giving 5 stars is because I had to wait a bit for assistance, but once helped, the service was excellent."</div>
+                        <div class="reviewer">
+                            <div class="reviewer-image"></div>
+                            <div>
+                                <div class="reviewer-name">David Rodriguez</div>
+                                <div class="reviewer-date">January 10, 2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Address:</strong><br>
+                                Near APGVB BANK <br>
+                                Garbham-535102,Vizianagaram 
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                9666169359
+                                8889996880
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <strong>Email:</strong><br>
+                                SSVagencies13122017@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">TW</a>
+                            <a href="#" class="social-icon">YT</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#hours">Store Hours</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#products">Smartphones</a></li>
+                        <li><a href="#products">Laptops</a></li>
+                        <li><a href="#products">Smart TVs</a></li>
+                        <li><a href="#products">Audio Systems</a></li>
+                        <li><a href="#products">Gaming Consoles</a></li>
+                        <li><a href="#products">Smart Home</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Customer Support</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Warranty Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest products, deals, and tech news.</p>
+                    <form style="margin-top: 15px;">
+                        <input type="email" placeholder="Your email address" class="form-control" style="margin-bottom: 10px;">
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Apex Electronics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
